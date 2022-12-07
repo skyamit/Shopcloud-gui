@@ -1,0 +1,17 @@
+#headerMenuButton{
+    display:flex;
+    align-items: cetnter;
+    justify-content: center;
+}
+#loginButton{
+    margin-right:10px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+#signupButton{
+    margin-left:10px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
