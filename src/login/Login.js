@@ -4,11 +4,25 @@ import { Form,Button, FormGroup, Input, Label } from 'reactstrap';
 function Login(props) {
     const [email, setEmail] = useState('email');
     const [password, setPassword] = useState('password');
+    //const [admin, setAdmin] = useState("");
 
-    const onSubmit = (e) => {
+    const getUsers = async() => {
+        fetch('http://localhost:8080/loginAdmin/'+email+'/'+password,{
+            mode:"no-cors",
+            method:"POST",
+            body:JSON.stringify({})
+        })
+        .then(response => response.json())
+        .then(json => console.log(json))
+        .catch(error => console.log(error));
+        //setAdmin(response)
+    }
+
+    const onSubmit = async (e) => {
         e.preventDefault();
-        console.log("refresh prevented"+email + password);
+        console.log(getUsers());
       };
+      
     return (
         <div>
             <div id="loginBody">
