@@ -14,8 +14,8 @@ function Box(props) {
                 <div>
                 <Routes>
                     <Route path="/" element={<About heading="About Shoploud" />} exact />
-                    <Route path="/Signup" element={<Signup heading="Signup Page" />} exact />
-                    <Route path="/Login" element={<Login heading="Login Page" />} exact />
+                    <Route path="/Signup" element={<Signup heading="Admin Signup Page" />} exact />
+                    <Route path="/Login" element={<Login heading="Admin Login Page" />} exact />
                 </Routes>
                 </div>
             </div>

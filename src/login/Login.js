@@ -7,11 +7,7 @@ function Login(props) {
     //const [admin, setAdmin] = useState("");
 
     const getUsers = async() => {
-        fetch('http://localhost:8080/loginAdmin/'+email+'/'+password,{
-            mode:"no-cors",
-            method:"POST",
-            body:JSON.stringify({})
-        })
+        fetch('http://localhost:8080/loginAdmin/'+email+'/'+password)
         .then(response => response.json())
         .then(json => console.log(json))
         .catch(error => console.log(error));
