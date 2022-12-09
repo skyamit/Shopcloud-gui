@@ -4,27 +4,34 @@ import { Form,Button, FormGroup, Input, Label } from 'reactstrap';
 function Login(props) {
     const [email, setEmail] = useState('email');
     const [password, setPassword] = useState('password');
-    //const [admin, setAdmin] = useState("");
+    const [admin, setAdmin] = useState({
+        "fid": null,
+        "fname": null,
+        "femail": null,
+        "fpassword": null,
+        "frole": null,
+        "fstatus": null,
+        "fcreatedAt": null,
+        "fupdatedAt": null
+    });
 
-    const getUsers = async() => {
-        fetch('http://localhost:8080/loginAdmin/'+email+'/'+password)
-        .then(response => response.json())
-        .then(json => console.log(json))
-        .catch(error => console.log(error));
-        //setAdmin(response)
+    const getUsers = async () => {
+        const response = await fetch('http://localhost:8080/loginAdmin/'+email+'/'+password);
+        const json = await response.json();
+        setAdmin(json);
     }
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        console.log(getUsers());
+        await getUsers();
       };
-      
+    
+
     return (
         <div>
             <div id="loginBody">
                 <h1>{props.heading}</h1>
                 <hr/>
-                
                 <Form  onSubmit={onSubmit}>
                     <FormGroup floating>
                         <Input id="email" name="email" placeholder="Email" type="email" onChange={(event)=>{setEmail(event.target.value)}} required/>

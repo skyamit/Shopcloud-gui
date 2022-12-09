@@ -20,8 +20,8 @@ function Signup(props){
     const createAccount = async() => {
         fetch('http://localhost:8080/createAdmin/',{
             method:"POST",
-            headers:{'Content-Type': 'application/json'},
-            body: JSON.stringify(variable)
+            headers:{"context-type":"application/json"},
+            body:JSON.stringify(variable)
         })
         .then(response => response.json())
         .then(json => console.log(json))
