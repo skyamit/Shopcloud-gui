@@ -21,7 +21,7 @@ function Signup(props){
         fetch('http://localhost:8080/createAdmin/',{
             method:"POST",
             headers:{"context-type":"application/json"},
-            body:{variable}
+            body:JSON.stringify(variable)
         })
         .then(response => response.json())
         .then(json => console.log(json))
