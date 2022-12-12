@@ -12,15 +12,15 @@ function SignupUser(){
                 <Form  >
                     <FormGroup floating>
                         <Input id="name" name="name" placeholder="Name" type="text"  required/>
-                        <Label for="name">Name</Label>
+                        <Label htmlFor="name">Name</Label>
                     </FormGroup>
                     <FormGroup floating>
                         <Input id="email" name="email" placeholder="Email" type="email" required/>
-                        <Label for="email">Email</Label>
+                        <Label htmlFor="email">Email</Label>
                     </FormGroup>
                     <FormGroup floating>
                         <Input id="password" name="password" placeholder="Password" type="password" required/>
-                        <Label for="password">Password</Label>
+                        <Label htmlFor="password">Password</Label>
                     </FormGroup>
                     <FormGroup>
                         <Button className="btn-success" type="submit">Signup</Button>

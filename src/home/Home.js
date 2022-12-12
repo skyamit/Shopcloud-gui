@@ -2,11 +2,12 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 function Home(props) {
-    const admin = useLocation().state;
-    console.log(useLocation());
+    const {state} = useLocation();
+    const {admin} = state;
+    console.log(admin);
     return (
         <>
-            Welcome to home
+            Welcome to home {admin.fid}
 
         </>
     );

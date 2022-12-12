@@ -42,15 +42,15 @@ function Signup(props){
                 <Form  onSubmit={onSubmit}>
                     <FormGroup floating>
                         <Input id="name" name="name" placeholder="Name" type="text" onChange={(event)=>{setName(event.target.value)}} required/>
-                        <Label for="name">Name</Label>
+                        <Label htmlFor="name">Name</Label>
                     </FormGroup>
                     <FormGroup floating>
                         <Input id="email" name="email" placeholder="Email" type="email" onChange={(event)=>{setEmail(event.target.value)}} required/>
-                        <Label for="email">Email</Label>
+                        <Label htmlFor="email">Email</Label>
                     </FormGroup>
                     <FormGroup floating>
                         <Input id="password" name="password" placeholder="Password" type="password" onChange={(event)=>{setPassword(event.target.value)}}  required/>
-                        <Label for="password">Password</Label>
+                        <Label htmlFor="password">Password</Label>
                     </FormGroup>
                     <FormGroup>
                         <Button className="btn-success" type="submit">Signup</Button>

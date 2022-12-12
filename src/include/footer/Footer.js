@@ -11,16 +11,16 @@ function Footer() {
                         <h5 className="white text text-center">
                             Contact Us
                         </h5>
-                        <div class="form-group">
-                            <label className="text white" for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required/>
+                        <div className="form-group">
+                            <label className="text white" htmlFor="exampleInputEmail1">Email address</label>
+                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required/>
                         </div>
-                        <div class="form-group">
-                            <label className="text white" for="message">Your Message / Suggestion / Complaint</label>
-                            <textarea type="text" class="form-control" id="message" rows="10"placeholder="Enter your message here" required/>
+                        <div className="form-group">
+                            <label className="text white" htmlFor="message">Your Message / Suggestion / Complaint</label>
+                            <textarea type="text" className="form-control" id="message" rows="10"placeholder="Enter your message here" required/>
                         </div>
                         <br/>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
                 </div>
                 <div className="col-12 col-lg-6 p-20">
