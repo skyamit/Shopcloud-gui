@@ -4,6 +4,9 @@
 .link{
     text-decoration: none;
 }
+.header-text{
+    font-size: 1.1rem;
+}
 .black{
     color: black ;
 }

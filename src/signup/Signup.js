@@ -15,11 +15,11 @@ function Signup(props){
         const variable = {
             "frole":frole,
             "fstatis":fstatus,
-            "fcreatedTime":fcreatedTime,
+            "fcreatedAt":fcreatedTime,
             "fname":name,
             "fpassword":password,
             "femail":email,
-            "fupdatedTime":fcreatedTime
+            "fupdatedAt":fcreatedTime
         };
         fetch('http://localhost:8080/createAdmin',{
             method:"POST",

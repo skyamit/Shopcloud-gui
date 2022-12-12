@@ -10,6 +10,7 @@ import "./Basic.css";
 import LoginUser from '../login/LoginUser';
 import SignupUser from '../signup/SignupUser';
 import AdminHeader from './header/AdminHeader';
+import AdminFooter from './footer/AdminFooter';
 
 function AppRouter(props) {
     return (
@@ -24,6 +25,8 @@ function AppRouter(props) {
                 <Route path="/admin/Login" element={<Header />} exact />
                 
                 <Route path="/admin/home" element={<AdminHeader />} exact />
+                <Route path="/admin/products" element={<AdminHeader />} exact />
+                <Route path="/admin/update" element={<AdminHeader />} exact />
             </Routes>
             
             <div className='d-flex justify-content-center p-20 m-20'>
@@ -40,12 +43,25 @@ function AppRouter(props) {
                             <Route path="/admin/Login" element={<Login  />} exact />
                             
                             <Route path="/admin/Home" element={<Home />} exact />
+                            <Route path="/admin/products" element={<Home />} exact />
+                            <Route path="/admin/update" element={<Home />} exact />
                         </Routes>
                     </div>
                 </div>
             </div>
+            <Routes>    
+                <Route path="/" element={<Footer/>} exact />
 
-            <Footer/>
+                <Route path="/login" element={<Footer/>} exact />
+                <Route path="/Signup" element={<Footer/>} exact />
+                
+                <Route path="/admin/Signup" element={<Footer />} exact />
+                <Route path="/admin/Login" element={<Footer />} exact />
+                
+                <Route path="/admin/home" element={<AdminFooter />} exact />
+                <Route path="/admin/products" element={<AdminFooter />} exact />
+                <Route path="/admin/update" element={<AdminFooter />} exact />
+            </Routes>
         </div>
     );
 }

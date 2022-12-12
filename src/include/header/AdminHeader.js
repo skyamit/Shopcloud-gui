@@ -23,12 +23,12 @@ function AdminHeader(props) {
         <div>
             <div id="navbar">
                 <div id="heading" className="bold">
-                    <Link className="link white text"  to="/admin/home" >Shoploud</Link>
+                    <Link className="header-text link white text"  to="/admin/home" >SHOPLOUD</Link>
                 </div>
                 <div id="buttons" className="bold">
-                    <Link className="link white text me-2" to="/admin/viewProducts" >View Products</Link>
-                    <Link className="link white text ms-2"  to="/admin/addProducts" >Add Products</Link>
-                    <Button className="link white text ms-2"  onClick={logout} >Logout</Button>
+                    <Link className="header-text  link white text me-2" to="/admin/products" >View Products</Link>
+                    <Link className="header-text  link white text ms-2"  to="/admin/update" >Add Products</Link>
+                    <Button className="header-text  link white text ms-2"  onClick={logout} >Logout</Button>
                 </div>
             </div>
         </div>
