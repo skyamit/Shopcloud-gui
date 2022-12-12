@@ -1,13 +1,13 @@
 import './App.css';
 import React from 'react';
-import Box from './include/Box';
+import AppRouter from './include/AppRouter';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
     <Router>
       <div>
-        <Box />
+        <AppRouter />
       </div>
     </Router>
   );

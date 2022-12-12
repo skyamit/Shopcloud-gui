@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form,Button, FormGroup, Input, Label } from 'reactstrap';
+import { Link, useNavigate } from "react-router-dom";
+import "../include/Basic.css";
 
 function Login(props) {
     const [email, setEmail] = useState('email');
@@ -14,23 +16,29 @@ function Login(props) {
         "fcreatedAt": null,
         "fupdatedAt": null
     });
+    const navigate = useNavigate();
 
     const getUsers = async () => {
         const response = await fetch('http://localhost:8080/loginAdmin/'+email+'/'+password);
         const json = await response.json();
-        setAdmin(json);
-    }
+        await setAdmin(json);
+    } 
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        await getUsers();
+        getUsers();
+        if(admin.fid != null)
+            navigate("/admin/home",{state:{admin:admin}});
       };
-    
+
+    // useEffect(()=>{
+    //     getUsers();
+    // },[admin]);
 
     return (
         <div>
             <div id="loginBody">
-                <h1>{props.heading}</h1>
+                <h1>Login to Businesss Account</h1>
                 <hr/>
                 <Form  onSubmit={onSubmit}>
                     <FormGroup floating>
@@ -42,9 +50,14 @@ function Login(props) {
                         <Label for="password">Password</Label>
                     </FormGroup>
                     <FormGroup>
-                        <Button type="submit">Submit</Button>
+                        <Button className="btn-success" type="submit">Submit</Button>
                     </FormGroup>
                 </Form>
+                <hr/>
+                <b>
+                    <p className='inline'>Yet to Create Business Account ?</p>
+                    <Link className="link inline" id="loginButton" to="/admin/signup" >Click Here</Link>
+                </b>
             </div>
         </div>
     );
