@@ -35,7 +35,7 @@ function Signup(props){
     };
 
     return (
-        <div>
+        <div className='form'>
             <h1>Create Businesss Account</h1>
             <hr/>
             <div>
@@ -59,8 +59,13 @@ function Signup(props){
             </div>
             <hr/>
             <b>
-                <p className='inline'>Already Created Account?</p>
-                <Link className="link inline" id="loginButton" to="/admin/login" >login now</Link>
+                <p className='inline'>Already Created Business Account? </p>
+                <Link className="link inline ms-1" to="/admin/login" > login now</Link>
+            </b>
+            <br/>
+            <b>
+                <p className='inline'>Create account as User? </p>
+                <Link className="link inline ms-1" to="/signup" > Click Here</Link>
             </b>
         </div>
     );

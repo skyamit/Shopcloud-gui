@@ -27,18 +27,17 @@ function Login(props) {
     const onSubmit = async (e) => {
         e.preventDefault();
         getUsers();
-        if(admin.fid != null)
-            navigate("/admin/home",{state:{admin:admin}});
       };
 
-    // useEffect(()=>{
-    //     getUsers();
-    // },[admin]);
+    useEffect(()=>{
+        if(admin.fid != null)
+            navigate("/admin/home",{state:{admin:admin}});
+    },[admin]);
 
     return (
         <div>
-            <div id="loginBody">
-                <h1>Login to Businesss Account</h1>
+            <div className='form'>
+                <h1>Business Login</h1>
                 <hr/>
                 <Form  onSubmit={onSubmit}>
                     <FormGroup floating>
@@ -55,8 +54,13 @@ function Login(props) {
                 </Form>
                 <hr/>
                 <b>
-                    <p className='inline'>Yet to Create Business Account ?</p>
-                    <Link className="link inline" id="loginButton" to="/admin/signup" >Click Here</Link>
+                    <p className='inline'>Yet to Create Business Account?</p>
+                    <Link className="link inline ms-1" to="/admin/signup" >Click Here</Link>
+                </b>
+                <br/>
+                <b>
+                    <p className='inline'>Login as User?</p>
+                    <Link className="link inline ms-1" to="/login" >Click Here</Link>
                 </b>
             </div>
         </div>

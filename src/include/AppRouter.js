@@ -7,16 +7,27 @@ import About from '../about/About';
 import Home from '../home/Home';
 import Footer from './footer/Footer';
 import "./Basic.css";
+import LoginUser from '../login/LoginUser';
+import SignupUser from '../signup/SignupUser';
 
 function AppRouter(props) {
-    console.log(props.name);
     return (
         <div>
-            <Routes>     
-                <Route path="/admin" element={<Header />} exact />
+            <Routes>    
+                <Route path="/" element={<Header />} exact />
+
+                // User before login
+                <Route path="/login" element={<Header />} exact />
+                <Route path="/Signup" element={<Header />} exact />
+                
+                // Admin before login
                 <Route path="/admin/Signup" element={<Header />} exact />
                 <Route path="/admin/Login" element={<Header />} exact />
+                
+                // Admin routes 
                 <Route path="/admin/home" element={<Header />} exact />
+            
+                // User routes
             </Routes>
             
             <div className='d-flex justify-content-center p-20 m-20'>
@@ -24,10 +35,15 @@ function AppRouter(props) {
                     <h1 className='text-center'>{props.heading}</h1>
                     <div>
                         <Routes>
-                            <Route path="/admin" element={<About heading="About Shoploud" />} exact />
-                            <Route path="/admin/Signup" element={<Signup heading="Admin Signup Page" />} exact />
-                            <Route path="/admin/Login" element={<Login heading="Admin Login Page" />} exact />
-                            <Route path="/admin/home" element={<Home />} exact />
+                            <Route path="/" element={<About/>} exact />
+                            
+                            <Route path="/login" element={<LoginUser />} exact />
+                            <Route path="/Signup" element={<SignupUser />} exact />
+                
+                            <Route path="/admin/Signup" element={<Signup />} exact />
+                            <Route path="/admin/Login" element={<Login  />} exact />
+                            
+                            <Route path="/admin/Home" element={<Home />} exact />
                         </Routes>
                     </div>
                 </div>
