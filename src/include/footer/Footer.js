@@ -17,7 +17,7 @@ function Footer() {
                         </div>
                         <div className="form-group">
                             <label className="text white" htmlFor="message">Your Message / Suggestion / Complaint</label>
-                            <textarea type="text" className="form-control" id="message" rows="10"placeholder="Enter your message here" required/>
+                            <textarea type="text" className="form-control" id="message" rows="8"placeholder="Enter your message here" required/>
                         </div>
                         <br/>
                         <button type="submit" className="btn btn-primary">Submit</button>

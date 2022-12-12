@@ -6,22 +6,21 @@ import "../include/Basic.css";
 function Login(props) {
     const [email, setEmail] = useState('email');
     const [password, setPassword] = useState('password');
-    const [admin, setAdmin] = useState({
-        "fid": null,
-        "fname": null,
-        "femail": null,
-        "fpassword": null,
-        "frole": null,
-        "fstatus": null,
-        "fcreatedAt": null,
-        "fupdatedAt": null
-    });
+    const [checklogin,setCheckLogin] = useState(false);
+
     const navigate = useNavigate();
 
     const getUsers = async () => {
         const response = await fetch('http://localhost:8080/loginAdmin/'+email+'/'+password);
-        const json = await response.json();
-        await setAdmin(json);
+        if(response.status === 404){
+            console.log('404');
+            document.getElementById("message").innerHTML= "Incorrect email or password";
+        }
+        if(response.status === 200){
+            const json = await response.json();
+            window.sessionStorage.setItem("admin",JSON.stringify(json));
+            setCheckLogin(true);
+        }
     } 
 
     const onSubmit = async (e) => {
@@ -30,9 +29,10 @@ function Login(props) {
       };
 
     useEffect(()=>{
-        if(admin.fid != null)
-            navigate("/admin/home",{state:{admin:admin}});
-    },[admin]);
+        if(sessionStorage.getItem("admin") !== 'null')
+            navigate("/admin/home");
+
+    },[checklogin,navigate]);
 
     return (
         <div>
@@ -52,6 +52,7 @@ function Login(props) {
                         <Button className="btn-success" type="submit">Submit</Button>
                     </FormGroup>
                 </Form>
+                <p className="text text-danger" id="message"></p>
                 <hr/>
                 <b>
                     <p className='inline'>Yet to Create Business Account?</p>
