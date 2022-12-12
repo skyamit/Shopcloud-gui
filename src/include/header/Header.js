@@ -1,26 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import HeaderMenu from "./HeaderMenu";
+import "../Basic.css";
 
 function Header(props) {
     return (
         <div>
             <div id="navbar">
                 <div id="heading" className="bold">
-                    <Link id="loginButton" to="/" >{props.name}</Link>
-                </div>
-                <div id="option1" className="bold">
-                    {props.option1}
-                </div>
-                <div id="option2" className="bold">
-                    {props.option2}
-                </div>
-                <div id="search" className="bold">
-                    Search Bar
+                    <Link className="link white text" id="loginButton" to="/admin" >Shoploud</Link>
                 </div>
                 <div id="buttons" className="bold">
-                    <HeaderMenu/> 
+                    <Link className="link white text" id="loginButton" to="/admin/Login" >Login</Link>
+                    <Link className="link white text" id="signupButton" to="/admin/Signup" >Signup</Link>
                 </div>
             </div>
         </div>

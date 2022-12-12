@@ -3,8 +3,11 @@
     justify-content: space-around;
     align-items: center;
     padding:10px;
-    background-color: #7d3b15;
+    background-color: #0c1027;
 }
 .bold{
     font-weight:bold;
+}
+#loginButton,#signupButton{
+    padding-left:10px;
 }

@@ -1,0 +1,9 @@
+footer{
+    background-color: #0c1027;
+}
+.circle{
+    border:solid;
+    border-radius: 50%;
+    overflow: hidden;
+    margin:10%;
+}

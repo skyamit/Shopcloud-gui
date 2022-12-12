@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Form,Button, FormGroup, Input, Label } from 'reactstrap';
 
 function Signup(props){
@@ -18,9 +19,9 @@ function Signup(props){
         "fupdatedTime":fcreatedTime
     };
     const createAccount = async() => {
-        fetch('http://localhost:8080/createAdmin/',{
+        fetch('http://localhost:8080/createAdmin',{
             method:"POST",
-            headers:{"context-type":"application/json"},
+            headers:{"Content-Type":"application/json"},
             body:JSON.stringify(variable)
         })
         .then(response => response.json())
@@ -35,7 +36,7 @@ function Signup(props){
 
     return (
         <div>
-            <h1>{props.heading}</h1>
+            <h1>Create Businesss Account</h1>
             <hr/>
             <div>
                 <Form  onSubmit={onSubmit}>
@@ -52,10 +53,15 @@ function Signup(props){
                         <Label for="password">Password</Label>
                     </FormGroup>
                     <FormGroup>
-                        <Button type="submit">Submit</Button>
+                        <Button className="btn-success" type="submit">Signup</Button>
                     </FormGroup>
                 </Form>
             </div>
+            <hr/>
+            <b>
+                <p className='inline'>Already Created Account?</p>
+                <Link className="link inline" id="loginButton" to="/admin/login" >login now</Link>
+            </b>
         </div>
     );
 }
