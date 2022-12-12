@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Form,Button, FormGroup, Input, Label } from 'reactstrap';
 
@@ -9,30 +9,39 @@ function Signup(props){
     const [name,setName] = useState("");
     const [password,setPassword] = useState("");
     const [email,setEmail] = useState("");
-    const variable = {
-        "frole":frole,
-        "fstatis":fstatus,
-        "fcreatedTime":fcreatedTime,
-        "fname":name,
-        "fpassword":password,
-        "femail":email,
-        "fupdatedTime":fcreatedTime
-    };
+
+    const [accountCreated,setAccountCreated] = useState(false);
     const createAccount = async() => {
+        const variable = {
+            "frole":frole,
+            "fstatis":fstatus,
+            "fcreatedTime":fcreatedTime,
+            "fname":name,
+            "fpassword":password,
+            "femail":email,
+            "fupdatedTime":fcreatedTime
+        };
         fetch('http://localhost:8080/createAdmin',{
             method:"POST",
-            headers:{"Content-Type":"application/json"},
+            headers:{'Content-Type': 'application/json'},
             body:JSON.stringify(variable)
         })
-        .then(response => response.json())
+        .then(async response => await response.json())
         .then(json => console.log(json))
         .catch(error => console.log(error));
-    };
+    }
 
     const onSubmit = async (e) => {
         e.preventDefault();
         console.log(createAccount());
+        setAccountCreated(true);
     };
+
+    useEffect(()=>{
+        if(accountCreated === true){
+            document.getElementById('message').innerHTML = 'Account Created Successfully.. Try logging In';
+        }
+    },[accountCreated]);
 
     return (
         <div className='form'>
@@ -56,6 +65,7 @@ function Signup(props){
                         <Button className="btn-success" type="submit">Signup</Button>
                     </FormGroup>
                 </Form>
+                <p className="text text-success" id="message"></p>
             </div>
             <hr/>
             <b>

@@ -1,13 +1,11 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
 
 function Home(props) {
-    const {state} = useLocation();
-    const {admin} = state;
-    console.log(admin);
+    const [admin,setAdmin] = useState(window.sessionStorage.getItem("admin"));
+
     return (
         <>
-            Welcome to home {admin.fid}
+            Welcome to home {admin}
 
         </>
     );

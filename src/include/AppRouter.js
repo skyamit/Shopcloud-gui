@@ -9,6 +9,7 @@ import Footer from './footer/Footer';
 import "./Basic.css";
 import LoginUser from '../login/LoginUser';
 import SignupUser from '../signup/SignupUser';
+import AdminHeader from './header/AdminHeader';
 
 function AppRouter(props) {
     return (
@@ -16,18 +17,13 @@ function AppRouter(props) {
             <Routes>    
                 <Route path="/" element={<Header />} exact />
 
-                // User before login
                 <Route path="/login" element={<Header />} exact />
                 <Route path="/Signup" element={<Header />} exact />
                 
-                // Admin before login
                 <Route path="/admin/Signup" element={<Header />} exact />
                 <Route path="/admin/Login" element={<Header />} exact />
                 
-                // Admin routes 
-                <Route path="/admin/home" element={<Header />} exact />
-            
-                // User routes
+                <Route path="/admin/home" element={<AdminHeader />} exact />
             </Routes>
             
             <div className='d-flex justify-content-center p-20 m-20'>
