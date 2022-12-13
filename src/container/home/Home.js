@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Basic.scss';
+import '../../style/Basic.scss';
 
 function Home(props) {
     const [admin,setAdmin] = useState(JSON.parse(window.sessionStorage.getItem("admin")));

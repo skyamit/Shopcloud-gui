@@ -1,6 +1,6 @@
 import React from "react";
 import './Footer.css'
-import '../Basic.scss';
+import '../../../style/Basic.scss';
 
 function Footer() {
     return (

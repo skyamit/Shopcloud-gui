@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
-import "../Basic.scss";
+import "../../../style/Basic.scss";
 import { Button } from "reactstrap";
 
 function AdminHeader(props) {
