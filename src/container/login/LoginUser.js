@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
-import '../Basic.css';
+import '../../style/Basic.scss';
 
 function LoginUser(){
     return (

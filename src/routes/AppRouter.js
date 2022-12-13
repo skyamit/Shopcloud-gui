@@ -6,7 +6,7 @@ import Header from '../components/molecules/header/Header';
 import About from '../container/about/About';
 import Home from '../container/home/Home';
 import Footer from '../components/molecules/footer/Footer';
-import "./Basic.css";
+import "../style/Basic.scss";
 import LoginUser from '../container/login/LoginUser';
 import SignupUser from '../container/signup/SignupUser';
 import AdminHeader from '../components/molecules/header/AdminHeader';
