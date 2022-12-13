@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Form,Button, FormGroup, Input, Label } from 'reactstrap';
 import { Link, useNavigate } from "react-router-dom";
-import "../include/Basic.css";
+import "../Basic.css";
 
 function Login(props) {
     const [email, setEmail] = useState('email');
