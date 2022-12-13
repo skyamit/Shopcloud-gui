@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Basic.css';
+import '../Basic.scss';
 
 function About(props) {
     return (
