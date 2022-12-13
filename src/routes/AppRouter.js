@@ -1,16 +1,16 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Login from "../login/Login";
-import Signup from '../signup/Signup';
-import Header from './header/Header';
-import About from '../about/About';
-import Home from '../home/Home';
-import Footer from './footer/Footer';
+import Login from "../container/login/Login";
+import Signup from '../container/signup/Signup';
+import Header from '../components/molecules/header/Header';
+import About from '../container/about/About';
+import Home from '../container/home/Home';
+import Footer from '../components/molecules/footer/Footer';
 import "./Basic.css";
-import LoginUser from '../login/LoginUser';
-import SignupUser from '../signup/SignupUser';
-import AdminHeader from './header/AdminHeader';
-import AdminFooter from './footer/AdminFooter';
+import LoginUser from '../container/login/LoginUser';
+import SignupUser from '../container/signup/SignupUser';
+import AdminHeader from '../components/molecules/header/AdminHeader';
+import AdminFooter from '../components/molecules/footer/AdminFooter';
 
 function AppRouter(props) {
     return (
