@@ -29,7 +29,7 @@ function Login(props) {
       };
 
     useEffect(()=>{
-        if(sessionStorage.getItem("admin") !== 'null')
+        if(sessionStorage.getItem("admin") !== null)
             navigate("/admin/home");
 
     },[checklogin,navigate]);
