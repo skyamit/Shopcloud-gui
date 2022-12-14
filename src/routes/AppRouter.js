@@ -11,6 +11,8 @@ import LoginUser from '../container/login/LoginUser';
 import SignupUser from '../container/signup/SignupUser';
 import AdminHeader from '../components/molecules/header/AdminHeader';
 import AdminFooter from '../components/molecules/footer/AdminFooter';
+import AddProduct from '../container/addproduct/AddProduct';
+import ViewProduct from '../container/viewproduct/ViewProduct';
 
 function AppRouter(props) {
     return (
@@ -26,11 +28,11 @@ function AppRouter(props) {
                 
                 <Route path="/admin/home" element={<AdminHeader />} exact />
                 <Route path="/admin/products" element={<AdminHeader />} exact />
-                <Route path="/admin/update" element={<AdminHeader />} exact />
+                <Route path="/admin/add" element={<AdminHeader />} exact />
             </Routes>
             
             <div className='d-flex justify-content-center p-20 m-20'>
-                <div className='col-12 col-lg-6 col-md-12' >
+                <div className='col-12 col-lg-8 col-md-12' >
                     <h1 className='text-center'>{props.heading}</h1>
                     <div>
                         <Routes>
@@ -43,8 +45,8 @@ function AppRouter(props) {
                             <Route path="/admin/Login" element={<Login  />} exact />
                             
                             <Route path="/admin/Home" element={<Home />} exact />
-                            <Route path="/admin/products" element={<Home />} exact />
-                            <Route path="/admin/update" element={<Home />} exact />
+                            <Route path="/admin/products" element={<ViewProduct />} exact />
+                            <Route path="/admin/add" element={<AddProduct />} exact />
                         </Routes>
                     </div>
                 </div>
@@ -60,7 +62,7 @@ function AppRouter(props) {
                 
                 <Route path="/admin/home" element={<AdminFooter />} exact />
                 <Route path="/admin/products" element={<AdminFooter />} exact />
-                <Route path="/admin/update" element={<AdminFooter />} exact />
+                <Route path="/admin/add" element={<AdminFooter />} exact />
             </Routes>
         </div>
     );

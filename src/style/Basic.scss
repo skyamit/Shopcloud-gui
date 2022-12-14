@@ -41,3 +41,16 @@
 .header-color{
     background-color: #0c1027;
 }
+
+#background{
+    background-image: url('../../public/images/blurAddProduct.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:10px 0px;
+}
+
+.blur-black{
+    background-color: rgba(255, 255, 255, 0.6);
+    height:fit-content
+}
