@@ -7,14 +7,14 @@ import { Button } from "reactstrap";
 function AdminHeader(props) {
     const[logoutt,setLogout] = useState(false);
     const logout = ()=>{
-        window.sessionStorage.setItem("admin",'null');
+        window.sessionStorage.removeItem("admin");
         setLogout(true);
     };
 
     const navigate = useNavigate();
     
     useEffect(()=>{
-        if(sessionStorage.getItem("admin") === 'null'){
+        if(sessionStorage.getItem("admin") === null){
             navigate("/admin/login",{});
         }
     },[logoutt,navigate]);
@@ -27,8 +27,8 @@ function AdminHeader(props) {
                 </div>
                 <div id="buttons" className="bold">
                     <Link className="header-text  link white text me-2" to="/admin/products" >View Products</Link>
-                    <Link className="header-text  link white text ms-2"  to="/admin/update" >Add Products</Link>
-                    <Button className="header-text  link white text ms-2"  onClick={logout} >Logout</Button>
+                    <Link className="header-text  link white text ms-2"  to="/admin/add" >Add Products</Link>
+                    <Button className="header-text btn-danger  link white text ms-2"  onClick={logout} >Logout</Button>
                 </div>
             </div>
         </div>
