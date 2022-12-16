@@ -28,7 +28,7 @@ function AdminHeader(props) {
                 <div id="buttons" className="bold">
                     <Link className="header-text  link white text me-2" to="/admin/products" >View Products</Link>
                     <Link className="header-text  link white text ms-2"  to="/admin/add" >Add Products</Link>
-                    <Button className="header-text  link white text ms-2"  onClick={logout} >Logout</Button>
+                    <Button className="header-text btn-danger  link white text ms-2"  onClick={logout} >Logout</Button>
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@ import '../../style/Basic.scss';
 function AddProduct() {
     const admin = sessionStorage.getItem("admin");
     const [name,setName] = useState();
-    const [category,setCategory] = useState();
+    const [category,setCategory] = useState("Men's Fashion");
     const [desc,setDesc] = useState();
     const [count,setCount] = useState();
     const [sellingPrice, setSellingPrice] = useState();
@@ -59,7 +59,7 @@ function AddProduct() {
                     <FormGroup floating>
                         <Input type="select"
                         name="category"
-                        id="category" onChange = {(event)=>{setCategory(event.target.value)}} >
+                        id="category" onChange = {(event)=>{setCategory(event.target.value)}} required>
                         <option>Men's Fashion</option>
                         <option>Women' Fashion</option>
                         <option>Beauty</option>
